@@ -19,6 +19,7 @@ Instale o [Dart SDK](http://www.gekorm.com/dart-windows/) e o [Visual Studio Cod
 Se você quiser entender mais detalhes do projeto é só [clicar aqui](https://medium.com/@kleberandrade/orientação-a-objetos-em-dart-16542b792eb9).
 
 ## Desafio para aula
+* Marcelo Benedito - R.A.: 160002096
 * OK - Estudar o tutorial do jogo: http://bit.ly/31n2ufY
 * OK - Instalar as ferramenta e compilar o jogo
 * OK - Adicionar outros monstros (carneiro [simbolo C] - dócil; lobo [simbolo L] - agressivo)
