@@ -19,14 +19,14 @@ Instale o [Dart SDK](http://www.gekorm.com/dart-windows/) e o [Visual Studio Cod
 Se você quiser entender mais detalhes do projeto é só [clicar aqui](https://medium.com/@kleberandrade/orientação-a-objetos-em-dart-16542b792eb9).
 
 ## Desafio para aula
-* Estudar o tutorial do jogo: http://bit.ly/31n2ufY
-* Instalar as ferramenta e compilar o jogo
-* Adicionar outros monstros (carneiro [simbolo C] - dócil; lobo [simbolo L] - agressivo)
-* Criar uma classe Carneiro e criar um movimento para fugir do jogador
-* Criar uma classe Lobo e criar um movimento para perseguir o jogador
-* Criar uma classe de Tesouro [simbolo G] ue ao passar por cima, abre o tesouro e ganha X moedas (valor aleatório entre 50 e 100)
-* Exibir na tela a quantidade de moedas do jogador
-* Testar o jogo
+* OK - Estudar o tutorial do jogo: http://bit.ly/31n2ufY
+* OK - Instalar as ferramenta e compilar o jogo
+* OK - Adicionar outros monstros (carneiro [simbolo C] - dócil; lobo [simbolo L] - agressivo)
+* OK - Criar uma classe Carneiro e criar um movimento para fugir do jogador
+* OK - Criar uma classe Lobo e criar um movimento para perseguir o jogador
+* OK - Criar uma classe de Tesouro [simbolo G] ue ao passar por cima, abre o tesouro e ganha X moedas (valor aleatório entre 50 e 100)
+* OK - Exibir na tela a quantidade de moedas do jogador
+* OK - Testar o jogo
 
 ## Licença
 

@@ -1,8 +1,11 @@
 import 'dart:math';
 import 'package:roguelike/celula.dart';
 import 'package:roguelike/criatura.dart';
+import 'package:roguelike/carneiro.dart';
+import 'package:roguelike/lobo.dart';
 import 'package:roguelike/mundo.dart';
 import 'package:roguelike/ponto_2d.dart';
+import 'package:roguelike/tesouro.dart';
 
 // Classe que criará mundos seguindo o padrão Builder
 class MundoBuilder {
@@ -13,10 +16,16 @@ class MundoBuilder {
   int largura, altura;
   List<List<Celula>> mapa;
   List<Criatura> criaturas;
+  List<Carneiro> carneiros;
+  List<Lobo> lobos;
+  List<Tesouro> tesouros;
 
   // Construtor padrão
   MundoBuilder(this.largura, this.altura) {
     criaturas = [];
+    carneiros = [];
+    lobos = [];
+    tesouros = [];
   }
 
   // Método para preencher o mapa (passo 1 da heurística)
@@ -77,8 +86,52 @@ class MundoBuilder {
     return this;
   }
 
+  MundoBuilder criarCarneiros(int quantidadeCarneiros) {
+    Random aleatorio = Random();
+    int x, y;
+    for (int i = 0; i < quantidadeCarneiros; i++) {
+      do {
+        x = aleatorio.nextInt(largura);
+        y = aleatorio.nextInt(altura);
+      } while (mapa[x][y].bloqueado);
+
+      carneiros.add(Carneiro(Ponto2D(x, y), Carneiro.SIMBOLO_CARNEIRO));
+    }
+    return this;
+  }
+
+  MundoBuilder criarLobos(int quantidadeLobos) {
+    Random aleatorio = Random();
+    int x, y;
+
+    for (int i = 0; i < quantidadeLobos; i++) {
+      do {
+        x = aleatorio.nextInt(largura);
+        y = aleatorio.nextInt(altura);
+      } while (mapa[x][y].bloqueado);
+
+      lobos.add(Lobo(Ponto2D(x, y), Lobo.SIMBOLO_LOBO));
+    }
+    return this;
+  }
+
+  MundoBuilder criarTesouros(int quantidadeTesouros) {
+    Random aleatorio = Random();
+    int x, y;
+
+    for (int i = 0; i < quantidadeTesouros; i++) {
+      do {
+        x = aleatorio.nextInt(largura);
+        y = aleatorio.nextInt(altura);
+      } while (mapa[x][y].bloqueado);
+
+      tesouros.add(Tesouro(Ponto2D(x, y), Tesouro.SIMBOLO_TESOURO));
+    }
+    return this;
+  }
+
   // Retorna um Mundo
   Mundo build() {
-    return Mundo(mapa, criaturas);
+    return Mundo(mapa, criaturas, carneiros, lobos, tesouros);
   }
 }

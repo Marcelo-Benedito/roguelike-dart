@@ -13,15 +13,22 @@ class Jogador extends Personagem {
   static final String SIMBOLO_JOGADOR = "@";
 
   int _vidas; // Variável privada (_nomeDaVariavel)
+  int _moedas;
   int passos; // Variável publica
 
   // Getter para variável vida
   int get vidas => _vidas;
+  int get moedas => _moedas;
 
   // Construtor padrão + Construtor do pai (super)
   Jogador(Ponto2D posicao, String simbolo, this._vidas)
       : super(posicao, simbolo) {
     this.passos = 0;
+    this._moedas = 0;
+  }
+
+  void adicionarMoedasEncontradas(moedas) { 
+    this._moedas += moedas;
   }
 
   // Método inline verifica se o jogador esta vivo
@@ -35,7 +42,7 @@ class Jogador extends Personagem {
 
   // Implementação do método abstrato atualizar
   // @mundo: mundo em que o personagem esta no momento
-  void atualizar(Mundo mundo) {
+  void atualizar(Mundo mundo) {    
     print(
         "Para mover o personagem [W/Cima - S/Baixo - A/Esquerda - D/Direita]: ");
 
